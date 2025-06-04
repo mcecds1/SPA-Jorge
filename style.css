@@ -1,0 +1,241 @@
+:root {
+  --color-bg: #f9f9f9;
+  --color-primary: #4f46e5;
+  --color-secondary: #6366f1;
+  --color-accent: #14b8a6;
+  --color-dark: #1f2937;
+  --color-light: #ffffff;
+  --font-main: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: var(--color-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1729508419473-b2d296bffbb2?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8') center/cover no-repeat;
+  height: 90vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 41, 55, 0.7);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  font-size: 1.1rem;
+}
+
+/* Secciones generales */
+section {
+  padding: 4rem 1rem;
+}
+
+.section-light {
+  background-color: var(--color-light);
+}
+
+.section-colored {
+  background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes zoomAuto {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.09);
+    text-shadow: 0 0 30px rgb(78, 70, 229);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+main#app {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Proyects */
+.cant-proyects {
+  text-align: center;
+  width: fit-content;
+  font-size: 40px;
+  animation: zoomAuto 2s infinite;
+}
+.projects-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+}
+.project-card {
+  margin: 40px;
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+}
+.contact-main img {
+  margin: 25px;
+}
+.contact-main img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 20px rgba(78, 70, 229, 0.938));
+}
+.name-contact {
+  font-size: 45px;
+  font-weight: 600;
+  color: var(--color-dark);
+}
